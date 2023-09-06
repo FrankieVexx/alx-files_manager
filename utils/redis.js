@@ -52,3 +52,19 @@ class RedisClient {
 
 export const redisClient = new RedisClient();
 export default redisClient;
+
+/* redis.js
+const redis = require('redis');
+
+const redisClient = redis.createClient({
+  host: 'redis-server ',
+  port: 6379, // Your Redis port
+});
+
+// Add the isAlive method
+redisClient.isAlive = () => {
+  return !!redisClient.connected;
+};
+
+module.exports = redisClient;
+*/
