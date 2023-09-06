@@ -1,21 +1,12 @@
-#!/usr/bin/env node
+import express from 'express';
+import startServer from './libs/boot';
+import injectRoutes from './routes';
+import injectMiddlewares from './libs/middlewares';
 
-const express = require('express');
-const cors = require('cors'); // Import the cors middleware
-const app = express();
-const PORT = process.env.PORT || 5000;
-const routes = require('./routes/index');
+const server = express();
 
-// Middleware to enable CORS
-app.use(cors());
+injectMiddlewares(server);
+injectRoutes(server);
+startServer(server);
 
-// Other middleware and route configurations...
-
-// Load routes from routes/index.js
-app.use('/', routes);
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-
+export default server;
