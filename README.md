@@ -562,7 +562,6 @@ GitHub repository: alx-files_manager
 File: tests/
  
 11. New user - welcome email
-#advanced
 Update the endpoint POST /users endpoint to start a background processing for sending a “Welcome email” to the user:
 
 Create a Bull queue userQueue
